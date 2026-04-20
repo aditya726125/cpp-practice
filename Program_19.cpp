@@ -1,15 +1,31 @@
 #include <iostream>
-    using namespace std;
-    class Data19 {
-        int secureData = 95;
-    public:
-        int getData(int auth) {
-            if(auth == 123) return secureData;
-            return -1;
-        }
-    };
-    int main() {
-        Data19 d;
-        cout << d.getData(123) << "\n";
-        return 0;
-    }
+
+using namespace std;
+
+class Distance {
+
+    int meters;
+
+public:
+
+    Distance(int m) { meters = m; }
+
+    friend void displayDistance(Distance d);
+
+};
+
+void displayDistance(Distance d) {
+
+    cout << "Distance: " << d.meters << "m\n";
+
+}
+
+int main() {
+
+    Distance dist(100);
+
+    displayDistance(dist);
+
+    return 0;
+
+}

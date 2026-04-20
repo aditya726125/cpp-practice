@@ -1,14 +1,19 @@
 #include <iostream>
-    using namespace std;
-    class SimpleStack22 {
-        int arr[5], top = -1;
-    public:
-        void push(int x) { if (top < 4) arr[++top] = x; }
-        void pop() { if (top >= 0) top--; }
-    };
-    int main() {
-        SimpleStack22 s;
-        s.push(22);
-        s.pop();
-        return 0;
-    }
+
+using namespace std;
+
+class MathUtils {
+
+public:
+
+    static int square(int n) { return n * n; }
+
+};
+
+int main() {
+
+    cout << "Square of 5 is: " << MathUtils::square(5) << "\n";
+
+    return 0;
+
+}

@@ -1,12 +1,33 @@
 #include <iostream>
-    using namespace std;
-    struct Node26 {
-        int data;
-        Node26* next;
-    };
-    int main() {
-        Node26* head = new Node26{26, nullptr};
-        cout << "Node contains: " << head->data << "\n";
-        delete head;
-        return 0;
+
+using namespace std;
+
+void process(int code) {
+
+    try {
+
+        if (code == 1) throw 10;
+
+        if (code == 2) throw "Error string";
+
+    } catch (int e) {
+
+        cout << "Integer Exception: " << e << "\n";
+
+    } catch (...) {
+
+        cout << "Default Exception caught\n";
+
     }
+
+}
+
+int main() {
+
+    process(1);
+
+    process(2);
+
+    return 0;
+
+}

@@ -1,13 +1,43 @@
 #include <iostream>
-    using namespace std;
-    class Sample18 {
-        int val;
-    public:
-        Sample18(int v) : val(v) {}
-        void display() { cout << "Value: " << val << "\n"; }
-    };
-    int main() {
-        Sample18 obj(180);
-        obj.display();
-        return 0;
-    }
+
+using namespace std;
+
+class Shape {
+
+public:
+
+    virtual void draw() = 0;
+
+};
+
+class Circle : public Shape {
+
+public:
+
+    void draw() override { cout << "Drawing Circle\n"; }
+
+};
+
+class Square : public Shape {
+
+public:
+
+    void draw() override { cout << "Drawing Square\n"; }
+
+};
+
+int main() {
+
+    Circle c;
+
+    Square s;
+
+    Shape* shapes[] = {&c, &s};
+
+    shapes[0]->draw();
+
+    shapes[1]->draw();
+
+    return 0;
+
+}

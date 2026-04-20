@@ -1,12 +1,37 @@
 #include <iostream>
-    using namespace std;
-    class Parent27 {
-    public:
-        void show() { cout << "Parent class\n"; }
-    };
-    class Child27 : public Parent27 {};
-    int main() {
-        Child27 c;
-        c.show();
-        return 0;
-    }
+
+#include <string>
+
+using namespace std;
+
+class Player {
+
+    string name;
+
+    int health;
+
+public:
+
+    Player() : Player("Unknown", 100) {}
+
+    Player(string n) : Player(n, 100) {}
+
+    Player(string n, int h) { name = n; health = h; }
+
+    void info() { cout << name << " - " << health << "HP\n"; }
+
+};
+
+int main() {
+
+    Player p1;
+
+    Player p2("Hero");
+
+    p1.info();
+
+    p2.info();
+
+    return 0;
+
+}

@@ -1,12 +1,25 @@
 #include <iostream>
-    using namespace std;
-    class Parent21 {
-    public:
-        void show() { cout << "Parent class\n"; }
-    };
-    class Child21 : public Parent21 {};
-    int main() {
-        Child21 c;
-        c.show();
-        return 0;
-    }
+
+using namespace std;
+
+class Counter {
+
+public:
+
+    static int count;
+
+    Counter() { count++; }
+
+};
+
+int Counter::count = 0;
+
+int main() {
+
+    Counter c1, c2, c3;
+
+    cout << "Total objects: " << Counter::count << "\n";
+
+    return 0;
+
+}

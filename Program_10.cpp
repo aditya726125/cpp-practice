@@ -1,14 +1,25 @@
 #include <iostream>
-    using namespace std;
-    class SimpleStack10 {
-        int arr[5], top = -1;
-    public:
-        void push(int x) { if (top < 4) arr[++top] = x; }
-        void pop() { if (top >= 0) top--; }
-    };
-    int main() {
-        SimpleStack10 s;
-        s.push(10);
-        s.pop();
-        return 0;
-    }
+
+using namespace std;
+
+class Math {
+
+public:
+
+    int add(int a, int b) { return a + b; }
+
+    int add(int a, int b, int c) { return a + b + c; }
+
+};
+
+int main() {
+
+    Math m;
+
+    cout << m.add(2, 3) << "\n";
+
+    cout << m.add(2, 3, 4) << "\n";
+
+    return 0;
+
+}

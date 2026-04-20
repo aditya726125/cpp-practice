@@ -1,13 +1,33 @@
 #include <iostream>
-    using namespace std;
-    class Sample12 {
-        int val;
-    public:
-        Sample12(int v) : val(v) {}
-        void display() { cout << "Value: " << val << "\n"; }
-    };
-    int main() {
-        Sample12 obj(120);
-        obj.display();
-        return 0;
-    }
+
+using namespace std;
+
+class Base {
+
+public:
+
+    virtual void show() { cout << "Base\n"; }
+
+};
+
+class Derived : public Base {
+
+public:
+
+    void show() override { cout << "Derived\n"; }
+
+};
+
+int main() {
+
+    Base* b;
+
+    Derived d;
+
+    b = &d;
+
+    b->show();
+
+    return 0;
+
+}

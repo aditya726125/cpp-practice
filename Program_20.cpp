@@ -1,12 +1,35 @@
 #include <iostream>
-    using namespace std;
-    struct Node20 {
-        int data;
-        Node20* next;
-    };
-    int main() {
-        Node20* head = new Node20{20, nullptr};
-        cout << "Node contains: " << head->data << "\n";
-        delete head;
-        return 0;
-    }
+
+using namespace std;
+
+class Secret {
+
+    int passcode;
+
+public:
+
+    Secret() { passcode = 1234; }
+
+    friend class Hacker;
+
+};
+
+class Hacker {
+
+public:
+
+    void reveal(Secret s) { cout << "Passcode is: " << s.passcode << "\n"; }
+
+};
+
+int main() {
+
+    Secret sec;
+
+    Hacker hack;
+
+    hack.reveal(sec);
+
+    return 0;
+
+}
